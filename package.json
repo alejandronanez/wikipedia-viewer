@@ -81,5 +81,8 @@
     "require": [
       "babel-register"
     ]
+  },
+  "dependencies": {
+    "rx": "^4.1.0"
   }
 }
