@@ -226,11 +226,6 @@
       "from": "aws-sign2@>=0.6.0 <0.7.0",
       "resolved": "./node_shrinkwrap/aws-sign2-0.6.0.tgz"
     },
-    "axios": {
-      "version": "0.12.0",
-      "from": "axios@>=0.12.0 <0.13.0",
-      "resolved": "./node_shrinkwrap/axios-0.12.0.tgz"
-    },
     "babel": {
       "version": "6.5.2",
       "from": "babel@>=6.5.2 <7.0.0",
@@ -1746,6 +1741,18 @@
       "from": "faye-websocket@>=0.10.0 <0.11.0",
       "resolved": "./node_shrinkwrap/faye-websocket-0.10.0.tgz"
     },
+    "fetch-jsonp": {
+      "version": "1.0.0",
+      "from": "fetch-jsonp@latest",
+      "resolved": "./node_shrinkwrap/fetch-jsonp-1.0.0.tgz",
+      "dependencies": {
+        "es6-promise": {
+          "version": "2.3.0",
+          "from": "es6-promise@>=2.3.0 <3.0.0",
+          "resolved": "./node_shrinkwrap/es6-promise-2.3.0.tgz"
+        }
+      }
+    },
     "figures": {
       "version": "1.7.0",
       "from": "figures@>=1.4.0 <2.0.0",
@@ -1827,11 +1834,6 @@
       "version": "2.0.1",
       "from": "fn-name@>=2.0.0 <3.0.0",
       "resolved": "./node_shrinkwrap/fn-name-2.0.1.tgz"
-    },
-    "follow-redirects": {
-      "version": "0.0.7",
-      "from": "follow-redirects@0.0.7",
-      "resolved": "./node_shrinkwrap/follow-redirects-0.0.7.tgz"
     },
     "for-in": {
       "version": "0.1.5",
@@ -6501,11 +6503,6 @@
       "version": "0.0.4",
       "from": "stream-combiner@>=0.0.4 <0.1.0",
       "resolved": "./node_shrinkwrap/stream-combiner-0.0.4.tgz"
-    },
-    "stream-consume": {
-      "version": "0.1.0",
-      "from": "stream-consume@>=0.1.0 <0.2.0",
-      "resolved": "./node_shrinkwrap/stream-consume-0.1.0.tgz"
     },
     "strict-uri-encode": {
       "version": "1.1.0",
