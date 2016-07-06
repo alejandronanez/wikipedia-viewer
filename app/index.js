@@ -21,6 +21,12 @@ const throttledInput$ = Rx.DOM
 
 Rx.DOM.submit(formElement).subscribe((ev) => ev.preventDefault());
 
-const searchStream$ = throttledInput$.flatMapLatest(userSearch => makeCall(getURL(userSearch)));
+throttledInput$
+	.subscribe((userSearch) => makeCall(getURL(userSearch)).subscribe(searchSuccess, searchError));
 
-searchStream$.subscribe(searchSuccess, searchError);
+// ============================================
+// Old way to do things. Left here as reference
+// ============================================
+//
+// const searchStream$ = throttledInput$.flatMap(userSearch => makeCall(getURL(userSearch)));
+// searchStream$.subscribe(searchSuccess, searchError);
