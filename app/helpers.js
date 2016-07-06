@@ -51,3 +51,21 @@ export function makeCall(URL) {
 			.flatMap(response => response.json())
 			.map(response => response.query.pages);
 }
+
+export function searchSuccess(articles) {
+	const container = document.querySelector('.js-article-container');
+	container.innerHTML = '';
+
+	Object.keys(articles).forEach((article) => {
+		container.appendChild(createArticle(articles[article]));
+	});
+
+	return container;
+}
+
+export function searchError() {
+	const container = document.querySelector('.js-article-container');
+	container.innerHTML = '<h1>Nothing found :(</h1>';
+
+	return container;
+}
