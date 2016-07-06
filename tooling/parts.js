@@ -71,6 +71,14 @@ exports.minify = function minify() {
 	};
 };
 
+exports.htmlSetup = function htmlSetup(appTitle) {
+	return {
+		plugins: [
+			new HtmlWebpackPlugin({	title: appTitle })
+		]
+	}
+};
+
 exports.setFreeVariable = function setFreeVariable(key, value) {
 	const env = {};
 	env[key] = JSON.stringify(value);

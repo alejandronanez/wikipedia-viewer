@@ -20,12 +20,14 @@ const common = {
 	},
 	output: {
 		path: PATHS.build,
-		filename: '[name].js'
+		filename: '[name].js',
+		publicPath: '/wikipedia-viewer/',
+		chunkFilename: '[chunkhash].js'
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: PATHS.htmlTemplate,
-			title: 'Wikipedia Viewer'
+			title: 'SPAs Boilerplate'
 		})
 	]
 };
@@ -58,6 +60,7 @@ switch (process.env.npm_lifecycle_event) {
 			}),
 			parts.resolve(PATHS.app),
 			parts.setupBabel(PATHS.app),
+			parts.setupFonts(PATHS.fonts),
 			parts.minify(),
 			parts.extractCSS(PATHS.style),
 			parts.purifyCSS([PATHS.app]),

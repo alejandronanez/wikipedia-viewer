@@ -1,11 +1,11 @@
 import 'rx-dom';
-import Rx, { Observable } from 'rx';
+import { Observable } from 'rx';
 import fetchJsonp from 'fetch-jsonp';
 
 export function getURL(query) {
 	/* eslint-disable no-multi-spaces */
 	/* eslint-disable prefer-template */
-	return  'http://en.wikipedia.org/w/api.php?' +
+	return  'https://en.wikipedia.org/w/api.php?' +
 			'format=json&' +
 			'action=query&' +
 			'generator=search&' +
