@@ -4,11 +4,14 @@ import Rx from 'rx';
 
 import {
 	getURL,
-	createArticle,
-	makeCall
+	makeCall,
+	searchSuccess,
+	searchError
 } from 'helpers';
 
 const input = document.querySelector('.js-search');
+const formElement = document.querySelector('.js-form');
+
 const throttledInput$ = Rx.DOM
 						.keyup(input)
 						.pluck('target', 'value')
@@ -16,13 +19,8 @@ const throttledInput$ = Rx.DOM
 						.debounce(500)
 						.distinctUntilChanged();
 
+Rx.DOM.submit(formElement).subscribe((ev) => ev.preventDefault());
+
 const searchStream$ = throttledInput$.flatMapLatest(userSearch => makeCall(getURL(userSearch)));
 
-searchStream$.subscribe((articles) => {
-	const container = document.querySelector('.js-article-container');
-	container.innerHTML = '';
-
-	Object.keys(articles).forEach((article) => {
-		container.appendChild(createArticle(articles[article]));
-	});
-});
+searchStream$.subscribe(searchSuccess, searchError);
