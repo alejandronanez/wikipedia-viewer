@@ -85,6 +85,7 @@
   "dependencies": {
     "fetch-jsonp": "^1.0.0",
     "purecss": "^0.6.0",
-    "rx": "^4.1.0"
+    "rx": "^4.1.0",
+    "rx-dom": "^7.0.3"
   }
 }
