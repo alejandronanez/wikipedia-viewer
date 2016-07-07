@@ -12,17 +12,18 @@ import {
 const input = document.querySelector('.js-search');
 const formElement = document.querySelector('.js-form');
 
-const throttledInput$ = Rx.DOM
-						.keyup(input)
-						.pluck('target', 'value')
-						.filter((text) => text.length > 3)
-						.debounce(500)
-						.distinctUntilChanged();
+Rx.DOM
+	.keyup(input)
+	.pluck('target', 'value')
+	.filter((text) => text.length > 3)
+	.debounce(500)
+	.distinctUntilChanged()
+	.map(getURL)
+	.subscribe((url) => {
+		makeCall(url).subscribe(searchSuccess, searchError);
+	});
 
 Rx.DOM.submit(formElement).subscribe((ev) => ev.preventDefault());
-
-throttledInput$
-	.subscribe((userSearch) => makeCall(getURL(userSearch)).subscribe(searchSuccess, searchError));
 
 // ============================================
 // Old way to do things. Left here as reference

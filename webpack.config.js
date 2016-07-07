@@ -76,7 +76,7 @@ switch (process.env.npm_lifecycle_event) {
 			parts.setupPOSTCSS(),
 			parts.devServer({
 				host: process.env.HOST,
-				port: process.env.PORT
+				port: 3010
 			}),
 			parts.htmlSetup(pjson.description, PATHS.htmlTemplate)
 		);
